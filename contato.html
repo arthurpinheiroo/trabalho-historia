@@ -1,0 +1,219 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Revolta das Chibatas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-form {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-group button[type="submit"] {
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button[type="submit"]:hover {
+            background-color: #e0a200;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .contact-info i {
+            margin-right: 15px;
+            color: var(--primary);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="scrolled">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo Revolta das Chibatas">
+                <div class="logo-text">Revolta das <span>Chibatas</span></div>
+            </div>
+
+            <button class="nav-toggler">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="historia.html">História</a></li>
+                    <li><a href="personagens.html">Personagens</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="linha-do-tempo.html">Linha do Tempo</a></li>
+                    <li><a href="contato.html" class="active">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Entre em Contato</h1>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2>Deixe sua Mensagem</h2>
+            <div class="contact-form">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h2>Informações de Contato</h2>
+                <p><i class="fas fa-map-marker-alt"></i> Santa Maria, RS, Brasil</p>
+                <p><i class="fas fa-envelope"></i> info@revoltadaschibatas.com.br</p>
+                <p><i class="fas fa-phone"></i> (55) 99999-9999</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col footer-about">
+                <h3>Sobre a Revolta</h3>
+                <p>A Revolta das Chibatas marcou a história do Brasil como um grito por justiça e dignidade humana.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col footer-links">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="historia.html"><i class="fas fa-history"></i> História</a></li>
+                    <li><a href="personagens.html"><i class="fas fa-user-friends"></i> Personagens</a></li>
+                    <li><a href="galeria.html"><i class="fas fa-images"></i> Galeria</a></li>
+                    <li><a href="linha-do-tempo.html"><i class="fas fa-timeline"></i> Linha do Tempo</a></li>
+                    <li><a href="contato.html"><i class="fas fa-envelope"></i> Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-contact">
+                <h3>Contato</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Santa Maria, RS, Brasil</p>
+                <p><i class="fas fa-envelope"></i> info@revoltadaschibatas.com.br</p>
+                <p><i class="fas fa-phone"></i> (55) 99999-9999</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Revolta das Chibatas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="back-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile Navigation
+        const navToggler = document.querySelector('.nav-toggler');
+        const nav = document.querySelector('nav');
+
+        navToggler.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        // Back to Top button
+        const backTop = document.querySelector('.back-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backTop.classList.add('active');
+            } else {
+                backTop.classList.remove('active');
+            }
+        });
+
+        backTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
