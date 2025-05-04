@@ -2,10 +2,10 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Personagens da Revolta das Chibatas</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -24,59 +24,70 @@
       text-align: center;
     }
 
-    .person-grid {
+    .historias-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       margin-top: 30px;
     }
 
-    .person-card {
+    .historia-card {
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
     }
 
-    .person-card:hover {
+    .historia-card:hover {
       transform: translateY(-5px);
     }
 
-    .person-card img {
+    .historia-img img {
       width: 100%;
       height: 240px;
       object-fit: cover;
     }
 
-    .person-card h3 {
-      margin: 15px;
+    .historia-content {
+      padding: 15px;
+    }
+
+    .historia-title {
       font-size: 1.3rem;
+      margin-bottom: 5px;
     }
 
     .person-title {
-      margin: 0 15px;
+      margin: 0 0 10px;
       font-style: italic;
       color: #888;
     }
 
-    .person-description {
-      margin: 10px 15px 20px;
+    .historia-text {
       color: #333;
+      margin-bottom: 15px;
     }
 
-    .read-more {
-    display: inline-flex;
-    align-items: center;
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    .historia-link {
+      display: inline-flex;
+      align-items: center;
+      color: #1a4d80;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 1px;
     }
 
-    .read-more:hover {
-      background-color: #163b66;
+    .historia-link i {
+      margin-left: 6px;
+    }
+
+    .historia-link:hover {
+      color: #163b66;
     }
 
     footer {
@@ -137,29 +148,41 @@
     <div class="container">
       <h2>Principais Figuras da Revolta</h2>
 
-      <div class="person-grid">
-        <div class="person-card">
-          <img src="img/Joao-Candido-na-sua-casa-em-Sao-Joao-do-Meriti-em-1958-aos-78-anos-—-Foto-ArquivoAgencia-O-GLOBO.jpg" alt="João Cândido" />
-          <h3>João Cândido Felisberto</h3>
-          <p class="person-title">O "Almirante Negro"</p>
-          <p class="person-description">Líder incontestável da revolta, João Cândido foi um marinheiro experiente que articulou e liderou o levante contra os castigos corporais.</p>
-          <a href="joao-candido.html" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+      <div class="historias-container">
+        <div class="historia-card">
+          <div class="historia-img">
+            <img src="img/Joao-Candido-na-sua-casa-em-Sao-Joao-do-Meriti-em-1958-aos-78-anos-—-Foto-ArquivoAgencia-O-GLOBO.jpg" alt="João Cândido"/>
+          </div>
+          <div class="historia-content">
+            <h3 class="historia-title">João Cândido Felisberto</h3>
+            <p class="person-title">O "Almirante Negro"</p>
+            <p class="historia-text">Líder incontestável da revolta, João Cândido foi um marinheiro experiente que articulou e liderou o levante contra os castigos corporais.</p>
+            <a href="joao-candido.html" class="historia-link">Ler mais <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
 
-        <div class="person-card">
-          <img src="img/Revolta da Chibata - Avelino.jpg" alt="Outros Líderes" />
-          <h3>Outros Líderes</h3>
-          <p class="person-title">Marinheiros Engajados</p>
-          <p class="person-description">Diversos outros marinheiros desempenharam papéis cruciais na organização e execução da revolta, cada um com sua história e motivação.</p>
-          <a href="outros-lideres.html" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+        <div class="historia-card">
+          <div class="historia-img">
+            <img src="img/Revolta da Chibata - Avelino.jpg" alt="Outros Líderes"/>
+          </div>
+          <div class="historia-content">
+            <h3 class="historia-title">Outros Líderes</h3>
+            <p class="person-title">Marinheiros Engajados</p>
+            <p class="historia-text">Diversos outros marinheiros desempenharam papéis cruciais na organização e execução da revolta, cada um com sua história e motivação.</p>
+            <a href="outros-lideres.html" class="historia-link">Ler mais <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
 
-        <div class="person-card">
-          <img src="img/hermes-da-fonseca-1438109080998_615x300.jpg" alt="Figuras do Governo" />
-          <h3>Figuras do Governo</h3>
-          <p class="person-title">Envolvidos nas Decisões</p>
-          <p class="person-description">Personalidades do governo e da Marinha que estiveram envolvidas nas negociações e nas consequências da revolta.</p>
-          <a href="figuras-governo.html" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+        <div class="historia-card">
+          <div class="historia-img">
+            <img src="img/hermes-da-fonseca-1438109080998_615x300.jpg" alt="Figuras do Governo"/>
+          </div>
+          <div class="historia-content">
+            <h3 class="historia-title">Figuras do Governo</h3>
+            <p class="person-title">Envolvidos nas Decisões</p>
+            <p class="historia-text">Personalidades do governo e da Marinha que estiveram envolvidas nas negociações e nas consequências da revolta.</p>
+            <a href="figuras-governo.html" class="historia-link">Ler mais <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
       </div>
     </div>
