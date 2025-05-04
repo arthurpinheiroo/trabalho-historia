@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Outros Líderes - Revolta das Chibatas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <header class="scrolled">
+    <div class="container header-container">
+      <div class="logo">
+        <div class="logo-text">Revolta das <span>Chibatas</span></div>
+      </div>
+
+      <button class="nav-toggler"><i class="fas fa-bars"></i></button>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="historia.html">História</a></li>
+          <li><a href="personagens.html" class="active">Personagens</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="linha-do-tempo.html">Linha do Tempo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Outros Líderes da Revolta</h1>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>Marinheiros de Destaque</h2>
+      <div class="person-grid">
+        <div class="person-card">
+          <img src="https://via.placeholder.com/200x200/1a4d80/f8b400?Text=Francisco+Dias" alt="Francisco Dias Martins">
+          <h3>Francisco Dias Martins</h3>
+          <p class="person-title">Segundo no comando</p>
+          <p class="person-description">Um dos principais articuladores da revolta, auxiliou João Cândido na coordenação do movimento.</p>
+        </div>
+
+        <div class="person-card">
+          <img src="https://via.placeholder.com/200x200/1a4d80/f8b400?Text=Marcilio+Franca" alt="Marcílio França">
+          <h3>Marcílio França</h3>
+          <p class="person-title">Comandante de navio</p>
+          <p class="person-description">Assumiu liderança em um dos navios tomados, demonstrando coragem e lealdade aos ideais do grupo.</p>
+        </div>
+
+        <div class="person-card">
+          <img src="https://via.placeholder.com/200x200/1a4d80/f8b400?Text=Joao+Alecrim" alt="João Alecrim">
+          <h3>João Alecrim</h3>
+          <p class="person-title">Participante ativo</p>
+          <p class="person-description">Lutou ao lado dos companheiros nas negociações e resistiu firmemente às ameaças do governo.</p>
+        </div>
+
+        <div class="person-card">
+          <img src="https://via.placeholder.com/200x200/1a4d80/f8b400?Text=Antonio+Paiva" alt="Antônio Paiva">
+          <h3>Antônio Paiva</h3>
+          <p class="person-title">Líder de tropa</p>
+          <p class="person-description">Comandou ações decisivas durante a rebelião e representou os revoltosos em momentos críticos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-col footer-about">
+        <h3>Sobre a Revolta</h3>
+        <p>A Revolta das Chibatas marcou a história do Brasil como um grito por justiça e dignidade humana.</p>
+      </div>
+
+      <div class="footer-col footer-links">
+        <h3>Links Úteis</h3>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+          <li><a href="historia.html"><i class="fas fa-history"></i> História</a></li>
+          <li><a href="personagens.html"><i class="fas fa-user-friends"></i> Personagens</a></li>
+          <li><a href="galeria.html"><i class="fas fa-images"></i> Galeria</a></li>
+          <li><a href="linha-do-tempo.html"><i class="fas fa-timeline"></i> Linha do Tempo</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-top">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile Navigation
+    const navToggler = document.querySelector('.nav-toggler');
+    const nav = document.querySelector('nav');
+
+    navToggler.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+      });
+    });
+
+    // Back to Top button
+    const backTop = document.querySelector('.back-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backTop.classList.add('active');
+      } else {
+        backTop.classList.remove('active');
+      }
+    });
+
+    backTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
