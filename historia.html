@@ -6,11 +6,58 @@
     <title>História da Revolta das Chibatas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilo para as caixas arredondadas */
+        .content-block {
+    background-color: #fff;
+    padding: 20px 20px 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.content-block::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 8px;
+    height: calc(100% - 20px);
+    background-color: #f39c12;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.content-block:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+        .content-block h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .content-block p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        /* Adicionando efeito de hover nas caixas */
+        .content-block:hover {
+            transform: translateY(-4px);
+        }
+    </style>
 </head>
 <body>
     <header class="scrolled"><div class="container header-container">
         <div class="logo">
-            <img src="img/logo.png" alt="Logo Revolta das Chibatas">
             <div class="logo-text">Revolta das <span>Chibatas</span></div>
         </div>
 
@@ -38,37 +85,33 @@
 </section>
 
 <section class="content-section">
-    <div class="container">
-        <div class="content-row">
-            <div class="main-content">
-                <h2>Antecedentes e Causas</h2>
-                <p>No início do século XX, a Marinha do Brasil ainda mantinha práticas de castigos corporais, como a chibata, herdadas do período da escravidão. Essa situação gerava grande descontentamento entre os marinheiros, em sua maioria negros e mulatos, que sofriam com as condições degradantes e a violência física.</p>
-                <p>A influência de ideias abolicionistas e republicanas, mesmo após a proclamação da República, ainda não havia erradicado completamente as práticas arcaicas e desumanas presentes nas instituições brasileiras. A modernização da Marinha, com a aquisição de novos e modernos navios como o Minas Gerais e o São Paulo, contrastava fortemente com as práticas disciplinares ultrapassadas.</p>
-
-                <h2>O Levante de 1910</h2>
-                <p>Em novembro de 1910, a situação atingiu um ponto crítico após o castigo de um marinheiro. Liderados por João Cândido Felisberto, os marinheiros se rebelaram a bordo dos principais navios da frota, tomando o controle e ameaçando bombardear a cidade do Rio de Janeiro caso suas exigências não fossem atendidas.</p>
-                <p>As principais exigências dos revoltosos eram o fim imediato dos castigos corporais, a melhoria das condições de trabalho e alimentação, e a anistia para todos os envolvidos na revolta. A ousadia do movimento e a ameaça à capital federal causaram grande comoção e pressão sobre o governo.</p>
-
-                <h2>Negociações e Consequências</h2>
-                <p>Após intensas negociações, o governo federal cedeu às exigências dos marinheiros, promulgando uma lei que abolía os castigos corporais na Marinha e concedendo anistia aos revoltosos. No entanto, a promessa de anistia não foi totalmente cumprida, e muitos líderes e participantes da revolta foram posteriormente perseguidos, presos e até mesmo mortos.</p>
-                <p>Apesar da quebra das promessas, a Revolta das Chibatas representou uma importante vitória contra as práticas desumanas e um marco na luta por direitos e dignidade no Brasil. João Cândido, o "Almirante Negro", tornou-se um símbolo de resistência e da luta contra o racismo e a opressão.</p>
-
-                <h2>Legado e Importância Histórica</h2>
-                <p>A Revolta das Chibatas expôs as profundas desigualdades raciais e sociais presentes na sociedade brasileira da época, mesmo após a abolição da escravidão. O movimento forçou uma discussão sobre as condições de vida e trabalho dos marinheiros e a necessidade de modernização das práticas disciplinares nas forças armadas.</p>
-                <p>Hoje, a Revolta das Chibatas é lembrada como um importante episódio de resistência popular e um símbolo da luta contra o racismo e a busca por justiça social no Brasil.</p>
-            </div>
-            <div class="sidebar">
-                <h3>Tópicos Relacionados</h3>
-                <ul>
-                    <li><a href="personagens.html">João Cândido Felisberto</a></li>
-                    <li><a href="#">Os Navios Envolvidos</a></li>
-                    <li><a href="#">A Abolição dos Castigos Corporais</a></li>
-                    <li><a href="#">A Imprensa e a Revolta</a></li>
-                    <li><a href="#">O Legado na Cultura Brasileira</a></li>
-                </ul>
-            </div>
+  <div class="container">
+    <div class="content-row">
+      <div class="main-content">
+        <div class="content-block">
+          <h2><i class="fas fa-flag"></i> Antecedentes e Causas</h2>
+          <p>No início do século XX, a Marinha do Brasil ainda mantinha castigos corporais como a chibata. A maioria dos marinheiros era negra ou mulata e vivia em condições degradantes e violentas.</p>
+          <p>A chegada de navios modernos como o Minas Gerais expôs o contraste entre a modernização tecnológica e os métodos disciplinares arcaicos.</p>
         </div>
+
+        <div class="content-block">
+          <h2><i class="fas fa-bolt"></i> O Levante de 1910</h2>
+          <p>João Cândido liderou a revolta após o castigo severo de um marinheiro. Os revoltosos tomaram navios e ameaçaram bombardear o Rio de Janeiro caso suas exigências não fossem atendidas.</p>
+          <p>As demandas incluíam o fim dos castigos corporais, melhores condições de vida e anistia para os envolvidos.</p>
+        </div>
+
+        <div class="content-block">
+          <h2><i class="fas fa-scale-balanced"></i> Negociações e Consequências</h2>
+          <p>O governo cedeu às exigências e aboliu os castigos corporais. Contudo, a anistia prometida foi quebrada, e muitos marinheiros foram perseguidos, presos ou mortos.</p>
+        </div>
+
+        <div class="content-block">
+          <h2><i class="fas fa-star"></i> Legado e Importância Histórica</h2>
+          <p>A revolta expôs o racismo estrutural nas Forças Armadas e transformou João Cândido em símbolo da luta por justiça, dignidade e igualdade social no Brasil.</p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <footer>
@@ -86,11 +129,9 @@
                 <li><a href="personagens.html"><i class="fas fa-user-friends"></i> Personagens</a></li>
                 <li><a href="galeria.html"><i class="fas fa-images"></i> Galeria</a></li>
                 <li><a href="linha-do-tempo.html"><i class="fas fa-timeline"></i> Linha do Tempo</a></li>
-              
             </ul>
         </div>
-
-        
+    </div>
 </footer>
 
 <div class="back-top">

@@ -186,7 +186,7 @@ nav a.active::after {
     color: var(--white);
     padding: 100px 0;
     text-align: center;
-    margin-top: 70px; /* Adjust based on fixed header height */
+    margin-top: 55px; /* Adjust based on fixed header height */
 }
 
 .page-header h1 {

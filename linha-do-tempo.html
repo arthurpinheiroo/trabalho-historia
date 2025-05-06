@@ -1,276 +1,258 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linha do Tempo da Revolta das Chibatas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .timeline {
-            position: relative;
-            padding: 20px 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Linha do Tempo da Revolta das Chibatas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .timeline {
+      position: relative;
+      padding: 20px 0;
+    }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background-color: var(--secondary);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1px;
-        }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: var(--secondary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
 
-        .timeline-container {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
+    .timeline-container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
 
-        .timeline-container::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
-            background-color: var(--white);
-            border: 4px solid var(--secondary);
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
+    .timeline-container::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: var(--white);
+      border: 4px solid var(--secondary);
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
 
-        .left-container {
-            left: 0;
-        }
+    .left-container {
+      left: 0;
+    }
 
-        .right-container {
-            left: 50%;
-        }
+    .right-container {
+      left: 50%;
+    }
 
-        .right-container::after {
-            left: -17px;
-        }
+    .right-container::after {
+      left: -17px;
+    }
 
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: var(--white);
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+    .timeline-content {
+      padding: 20px 30px;
+      background-color: var(--white);
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
 
-        .timeline-content h3 {
-            font-size: 18px;
-            margin: 0 0 10px;
-            color: var(--primary);
-        }
+    .timeline-content .timeline-date {
+      display: inline-block;
+      background-color: var(--secondary);
+      color: var(--primary);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-bottom: 10px;
+      position: relative;
+    }
 
-        .timeline-content p {
-            font-size: 15px;
-            line-height: 1.6;
-            color: #555;
-        }
+    .timeline-content h3 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: var(--primary);
+    }
 
-        .timeline-date {
-            background-color: var(--secondary);
-            color: var(--primary);
-            padding: 8px 15px;
-            border-radius: 12px;
-            font-size: 14px;
-            position: absolute;
-            top: 0;
-        }
+    .timeline-content p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555;
+    }
 
-        .left-container .timeline-date {
-            right: 15px;
-        }
+    @media screen and (max-width: 768px) {
+      .timeline::before {
+        left: 50px;
+      }
 
-        .right-container .timeline-date {
-            left: 15px;
-        }
+      .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
 
-        @media screen and (max-width: 768px) {
-            .timeline::before {
-                left: 50px;
-            }
+      .timeline-container::after {
+        left: 15px;
+      }
 
-            .timeline-container {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
+      .left-container::after,
+      .right-container::after {
+        left: 15px;
+      }
 
-            .timeline-container::after {
-                left: 15px;
-            }
-
-            .left-container::after,
-            .right-container::after {
-                left: 15px;
-            }
-
-            .right-container {
-                left: 0%;
-            }
-
-            .left-container .timeline-date,
-            .right-container .timeline-date {
-                right: auto;
-                left: 15px;
-            }
-        }
-    </style>
+      .right-container {
+        left: 0%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header class="scrolled">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="img/logo.png" alt="Logo Revolta das Chibatas">
-                <div class="logo-text">Revolta das <span>Chibatas</span></div>
-            </div>
+  <header class="scrolled">
+    <div class="container header-container">
+      <div class="logo">
+        <div class="logo-text">Revolta das <span>Chibatas</span></div>
+      </div>
 
-            <button class="nav-toggler">
-                <i class="fas fa-bars"></i>
-            </button>
+      <button class="nav-toggler"><i class="fas fa-bars"></i></button>
 
-            <nav>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="historia.html">História</a></li>
-                    <li><a href="personagens.html">Personagens</a></li>
-                    <li><a href="galeria.html">Galeria</a></li>
-                    <li><a href="linha-do-tempo.html" class="active">Linha do Tempo</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="page-header">
-        <div class="container">
-            <h1>Linha do Tempo da Revolta das Chibatas</h1>
-        </div>
-    </section>
-
-    <section class="content-section">
-        <div class="container">
-            <div class="timeline">
-                <div class="timeline-container left-container">
-                    <div class="timeline-content">
-                        <h3 class="timeline-date">Início do Século XX</h3>
-                        <h3>Condições na Marinha</h3>
-                        <p>Práticas de castigos corporais, como a chibata, ainda eram comuns na Marinha Brasileira, gerando grande descontentamento entre os marinheiros.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-container right-container">
-                    <div class="timeline-content">
-                        <h3 class="timeline-date">Novembro de 1910</h3>
-                        <h3>O Incidente Deflagrador</h3>
-                        <p>O castigo de um marinheiro a bordo de um dos navios serviu como estopim para a revolta.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-container left-container">
-                    <div class="timeline-content">
-                        <h3 class="timeline-date">22 de Novembro de 1910</h3>
-                        <h3>Início da Revolta</h3>
-                        <p>Marinheiros liderados por João Cândido tomam o controle dos principais navios da frota no Rio de Janeiro.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-container right-container">
-                    <div class="timeline-content">
-                        <h3 class="timeline-date">22-27 de Novembro de 1910</h3>
-                        <h3>Ameaça e Negociações</h3>
-                        <p>Os revoltosos ameaçam bombardear a cidade exigindo o fim dos castigos, melhores condições e anistia.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-container left-container">
-                    <div class="timeline-content">
-                        <h3 class="timeline-date">27 de Novembro de 1910</h3>
-                        <h3>Acordo e Anistia</h3>
-                        <p>O governo federal cede às exigências e promulga lei abolindo os castigos e concedendo anistia.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-container right-container">
-                    <div class="timeline-content">
-                        <h3 class="timeline-date">Pós-Revolta</h3>
-                        <h3>Perseguição e Legado</h3>
-                        <p>A anistia não é totalmente cumprida, e muitos revoltosos são perseguidos. A revolta deixa um legado de luta por direitos e contra o racismo.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container footer-container">
-            <div class="footer-col footer-about">
-                <h3>Sobre a Revolta</h3>
-                <p>A Revolta das Chibatas marcou a história do Brasil como um grito por justiça e dignidade humana.</p>
-            </div>
-
-            <div class="footer-col footer-links">
-                <h3>Links Úteis</h3>
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
-                    <li><a href="historia.html"><i class="fas fa-history"></i> História</a></li>
-                    <li><a href="personagens.html"><i class="fas fa-user-friends"></i> Personagens</a></li>
-                    <li><a href="galeria.html"><i class="fas fa-images"></i> Galeria</a></li>
-                    <li><a href="linha-do-tempo.html"><i class="fas fa-timeline"></i> Linha do Tempo</a></li>
-                </ul>
-            </div>
-
-            
-    </footer>
-
-    <div class="back-top">
-        <i class="fas fa-chevron-up"></i>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="historia.html">História</a></li>
+          <li><a href="personagens.html">Personagens</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="linha-do-tempo.html" class="active">Linha do Tempo</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        });
+  <section class="page-header">
+    <div class="container">
+      <h1>Linha do Tempo da Revolta das Chibatas</h1>
+    </div>
+  </section>
 
-        // Mobile Navigation
-        const navToggler = document.querySelector('.nav-toggler');
-        const nav = document.querySelector('nav');
+  <section class="content-section">
+    <div class="container">
+      <div class="timeline">
+        <div class="timeline-container left-container">
+          <div class="timeline-content">
+            <div class="timeline-date">Início do Século XX</div>
+            <h3>Condições na Marinha</h3>
+            <p>Práticas de castigos corporais, como a chibata, ainda eram comuns na Marinha Brasileira, gerando grande descontentamento entre os marinheiros.</p>
+          </div>
+        </div>
 
-        navToggler.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
+        <div class="timeline-container right-container">
+          <div class="timeline-content">
+            <div class="timeline-date">Novembro de 1910</div>
+            <h3>O Incidente Deflagrador</h3>
+            <p>O castigo de um marinheiro a bordo de um dos navios serviu como estopim para a revolta.</p>
+          </div>
+        </div>
 
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-            });
-        });
+        <div class="timeline-container left-container">
+          <div class="timeline-content">
+            <div class="timeline-date">22 de Novembro de 1910</div>
+            <h3>Início da Revolta</h3>
+            <p>Marinheiros liderados por João Cândido tomam o controle dos principais navios da frota no Rio de Janeiro.</p>
+          </div>
+        </div>
 
-        // Back to Top button
-        const backTop = document.querySelector('.back-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backTop.classList.add('active');
-            } else {
-                backTop.classList.remove('active');
-            }
-        });
+        <div class="timeline-container right-container">
+          <div class="timeline-content">
+            <div class="timeline-date">22–27 de Novembro de 1910</div>
+            <h3>Ameaça e Negociações</h3>
+            <p>Os revoltosos ameaçam bombardear a cidade exigindo o fim dos castigos, melhores condições e anistia.</p>
+          </div>
+        </div>
 
-        backTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
+        <div class="timeline-container left-container">
+          <div class="timeline-content">
+            <div class="timeline-date">27 de Novembro de 1910</div>
+            <h3>Acordo e Anistia</h3>
+            <p>O governo federal cede às exigências e promulga lei abolindo os castigos e concedendo anistia.</p>
+          </div>
+        </div>
+
+        <div class="timeline-container right-container">
+          <div class="timeline-content">
+            <div class="timeline-date">Pós-Revolta</div>
+            <h3>Perseguição e Legado</h3>
+            <p>A anistia não é totalmente cumprida, e muitos revoltosos são perseguidos. A revolta deixa um legado de luta por direitos e contra o racismo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-col footer-about">
+        <h3>Sobre a Revolta</h3>
+        <p>A Revolta das Chibatas marcou a história do Brasil como um grito por justiça e dignidade humana.</p>
+      </div>
+
+      <div class="footer-col footer-links">
+        <h3>Links Úteis</h3>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+          <li><a href="historia.html"><i class="fas fa-history"></i> História</a></li>
+          <li><a href="personagens.html"><i class="fas fa-user-friends"></i> Personagens</a></li>
+          <li><a href="galeria.html"><i class="fas fa-images"></i> Galeria</a></li>
+          <li><a href="linha-do-tempo.html"><i class="fas fa-timeline"></i> Linha do Tempo</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-top">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile Navigation
+    const navToggler = document.querySelector('.nav-toggler');
+    const nav = document.querySelector('nav');
+
+    navToggler.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+      });
+    });
+
+    // Back to Top button
+    const backTop = document.querySelector('.back-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backTop.classList.add('active');
+      } else {
+        backTop.classList.remove('active');
+      }
+    });
+
+    backTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 </body>
 </html>
