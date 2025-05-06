@@ -580,3 +580,150 @@ section {
     margin: 0 auto;
 }
 
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    /* Ajusta o header (menu e logo) para telas menores */
+    .header-container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .logo-text {
+      font-size: 20px;
+      text-align: center;
+    }
+  
+    .nav-toggler {
+      display: block;
+    }
+  
+    /* Ajuste para navegação */
+    nav ul {
+      display: none; /* Menu escondido por padrão */
+      flex-direction: column;
+      margin-top: 20px;
+    }
+  
+    nav.active ul {
+      display: flex;
+    }
+  
+    nav a {
+      padding: 10px 0;
+      font-size: 18px;
+    }
+  
+    /* Ajuste para o conteúdo do cabeçalho */
+    .page-header {
+      padding: 50px 20px;
+      margin-top: 70px; /* Ajusta o espaçamento do topo devido ao header fixo */
+    }
+  
+    .page-header h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+  
+    /* Ajuste das imagens e conteúdo */
+    .gov-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .leader-photo {
+      width: 80%;
+      height: auto;
+    }
+  
+    .content-block {
+      width: 90%;
+      margin-top: 20px;
+      padding: 15px;
+    }
+  
+    .leader-caption {
+      width: 100%;
+      margin-top: 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+  
+  /* Responsividade para telas ainda menores (celulares muito pequenos) */
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 28px;
+    }
+  
+    .hero p {
+      font-size: 14px;
+    }
+  
+    .btn {
+      padding: 10px 20px;
+      font-size: 12px;
+    }
+  
+    .hero-buttons {
+      gap: 10px;
+      flex-direction: column;
+    }
+  
+    .intro-content {
+      grid-template-columns: 1fr;
+    }
+  
+    .intro-image {
+      width: 100%;
+      justify-self: center;
+    }
+  
+    .sidebar {
+      padding: 20px;
+    }
+  
+    .stat-item {
+      padding: 15px;
+      font-size: 14px;
+    }
+  
+    /* Ajustes gerais para celulares pequenos */
+    .content-row {
+      flex-direction: column;
+    }
+  
+    .intro-text p {
+      font-size: 14px;
+    }
+  }
+  
+  /* Responsividade para dispositivos com largura maior que 768px e menor que 1024px */
+  @media (max-width: 1024px) {
+    .container {
+      width: 95%;
+    }
+  
+    .page-header {
+      padding: 80px 20px;
+    }
+  
+    .page-header h1 {
+      font-size: 40px;
+    }
+  
+    .content-row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .hero {
+      height: 80vh;
+      padding: 50px 20px;
+    }
+  
+    .hero h1 {
+      font-size: 40px;
+    }
+  }
+  
