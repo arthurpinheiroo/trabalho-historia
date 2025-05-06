@@ -37,6 +37,7 @@
 
     .content-block {
       flex: 1;
+      min-width: 300px;
       background-color: #fff;
       padding: 20px 20px 20px 25px;
       border-radius: 10px;
@@ -64,11 +65,9 @@
 
     .leader-caption {
       text-align: center;
-      margin-top: 10px;
+      margin-top: 15px;
       font-weight: bold;
       color: #333;
-      width: 300px;
-      margin-left: 910px;
     }
 
     @media (max-width: 768px) {
@@ -79,6 +78,23 @@
 
       .leader-caption {
         width: 100%;
+        margin-left: 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+        background: var(--primary);
+        padding: 15px;
+        display: none;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .nav-toggler {
+        display: block;
       }
     }
   </style>
@@ -89,13 +105,14 @@
       <div class="logo">
         <div class="logo-text">Revolta das <span>Chibatas</span></div>
       </div>
+      <button class="nav-toggler" onclick="toggleMenu()">☰</button>
       <nav>
-        <ul>
+        <ul id="nav-menu">
           <li><a href="index.html">Início</a></li>
           <li><a href="historia.html">História</a></li>
           <li><a href="personagens.html">Personagens</a></li>
           <li><a href="galeria.html">Galeria</a></li>
-          <li><a href="linha-do-tempo.html">linha do Tempo</a></li>
+          <li><a href="linha-do-tempo.html">Linha do Tempo</a></li>
         </ul>
       </nav>
     </div>
@@ -110,26 +127,32 @@
   <section class="content-section">
     <div class="container">
       <div class="gov-section">
-        <!-- Bloco de texto primeiro -->
-       <div class="content-block">
-  <p>Alguns dos nomes envolvidos nas decisões e repressões da revolta foram:</p>
-  <ul>
-    <li><strong>Hermes da Fonseca</strong> – Presidente do Brasil na época, autorizou a anistia temporária e depois perseguiu os líderes.</li>
-    <li><strong>Joaquim Marques Batista de Leão</strong> – Ministro da Marinha, envolvido nas negociações.</li>
-  </ul>
-  <p>Essas figuras tiveram papel ambíguo: inicialmente negociando com os revoltosos, mas logo apoiando repressão severa após o fim do motim.</p>
-  <p>A postura do governo refletia não apenas o desejo de controlar as Forças Armadas, mas também o medo de que o movimento se espalhasse por outros setores. A repressão foi intensa, com diversos marinheiros sendo expulsos, presos e até executados em condições duvidosas.</p>
-  <p>Hermes da Fonseca, militar de carreira, via a disciplina como um pilar da ordem e, embora tenha inicialmente cedido às exigências dos revoltosos, logo recorreu à força para restaurar o controle. Essa contradição marcou sua presidência e influenciou a percepção pública sobre sua liderança.</p>
-</div>
+        <!-- Bloco de texto -->
+        <div class="content-block">
+          <p>Alguns dos nomes envolvidos nas decisões e repressões da revolta foram:</p>
+          <ul>
+            <li><strong>Hermes da Fonseca</strong> – Presidente do Brasil na época, autorizou a anistia temporária e depois perseguiu os líderes.</li>
+            <li><strong>Joaquim Marques Batista de Leão</strong> – Ministro da Marinha, envolvido nas negociações.</li>
+          </ul>
+          <p>Essas figuras tiveram papel ambíguo: inicialmente negociando com os revoltosos, mas logo apoiando repressão severa após o fim do motim.</p>
+          <p>A postura do governo refletia não apenas o desejo de controlar as Forças Armadas, mas também o medo de que o movimento se espalhasse por outros setores. A repressão foi intensa, com diversos marinheiros sendo expulsos, presos e até executados em condições duvidosas.</p>
+          <p>Hermes da Fonseca, militar de carreira, via a disciplina como um pilar da ordem e, embora tenha inicialmente cedido às exigências dos revoltosos, logo recorreu à força para restaurar o controle. Essa contradição marcou sua presidência e influenciou a percepção pública sobre sua liderança.</p>
+        </div>
 
-        <!-- Imagem à direita -->
+        <!-- Imagem -->
         <div class="leader-photo">
-          <img src="img/Hermes_da_Fonseca_(1910).jpg  " alt="Hermes da Fonseca">
+          <img src="img/Hermes_da_Fonseca_(1910).jpg" alt="Hermes da Fonseca">
         </div>
       </div>
 
       <div class="leader-caption">Hermes da Fonseca – Presidente do Brasil em 1910</div>
     </div>
   </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
