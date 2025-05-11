@@ -8,51 +8,42 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         /* Estilo para as caixas arredondadas */
-        .content-block {
-    background-color: #fff;
-    padding: 20px 20px 20px 25px;
+        /* Estilo para as caixas arredondadas - MODIFICADO */
+.content-block {
+    background-color: #f9f9f9; /* Cor de fundo mais clara */
+    padding: 25px; /* Aumentando o padding interno */
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+    margin-bottom: 25px; /* Espaçamento inferior ligeiramente menor */
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transição mais suave */
     overflow: hidden;
+    border-left: 8px solid #f39c12; /* Barra lateral como destaque */
 }
 
-.content-block::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 0;
-    width: 8px;
-    height: calc(100% - 20px);
-    background-color: #f39c12;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+.content-block h2 {
+    font-size: 1.6rem; /* Ligeiramente maior */
+    color: #2c3e50; /* Cor de título mais escura */
+    margin-bottom: 12px;
+    padding-left: 10px; /* Espaçamento para o ícone */
+}
+
+.content-block h2 i {
+    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+    color: #f39c12; /* Cor do ícone consistente com a barra lateral */
+}
+
+.content-block p {
+    font-size: 1.05rem; /* Ligeiramente maior */
+    line-height: 1.7; /* Melhor espaçamento entre linhas */
+    color: #555; /* Cor de texto um pouco mais clara */
+    padding-left: 10px; /* Alinhamento com o título */
 }
 
 .content-block:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px); /* Efeito de levantar mais sutil */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra no hover mais pronunciada */
 }
-
-
-        .content-block h2 {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .content-block p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #444;
-        }
-
-        /* Adicionando efeito de hover nas caixas */
-        .content-block:hover {
-            transform: translateY(-4px);
-        }
     </style>
 </head>
 <body>
@@ -72,7 +63,6 @@
                 <li><a href="personagens.html">Personagens</a></li>
                 <li><a href="galeria.html">Galeria</a></li>
                 <li><a href="linha-do-tempo.html">Linha do Tempo</a></li>
-                <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
     </div>
