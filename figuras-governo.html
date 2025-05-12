@@ -1,159 +1,263 @@
+personagens.html
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Figuras do Governo</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .gov-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: flex-start;
-      justify-content: center;
-      margin-top: 30px;
-    }
+  <link rel="shortcut icon" href="img/Leonardo_Phoenix_10_A_stylized_favicon_image_depicting_the_Chi_3.jpg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personagens da Revolta das Chibatas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .personagens-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 30px;
+        }
 
-    .leader-photo {
-      flex: 0 0 300px;
-      border: 6px solid #f1c40f;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
+        .personagem-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .leader-photo img {
-      width: 100%;
-      height: 400px;
-      display: block;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
+        .personagem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
 
-    .leader-photo:hover img {
-      transform: scale(1.05);
-    }
+        .personagem-image {
+            height: 200px;
+            overflow: hidden;
+        }
 
-    .content-block {
-      flex: 1;
-      min-width: 300px;
-      background-color: #fff;
-      padding: 20px 20px 20px 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        .personagem-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
 
-    .content-block::before {
-      content: '';
-      position: absolute;
-      top: 10px;
-      left: 0;
-      width: 8px;
-      height: calc(100% - 20px);
-      background-color: #f39c12;
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
-    }
+        .personagem-card:hover .personagem-image img {
+            transform: scale(1.05);
+        }
 
-    .content-block:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
+        .personagem-info {
+            padding: 20px;
+            text-align: center;
+        }
 
-    .leader-caption {
-      text-align: center;
-      margin-top: 15px;
-      font-weight: bold;
-      color: #333;
-      margin-left: 910px;
-    }
+        .personagem-nome {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
 
-    @media (max-width: 768px) {
-      .gov-section {
-        flex-direction: column;
-        align-items: center;
-      }
+        .personagem-papel {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 15px;
+        }
 
-      .leader-caption {
-        width: 100%;
-        margin-left: 0;
-      }
+        .personagem-detalhes {
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.6;
+        }
 
-      nav ul {
-        flex-direction: column;
-        gap: 15px;
-        background: var(--primary);
-        padding: 15px;
-        display: none;
-      }
+        @media (max-width: 768px) {
+            .personagens-section {
+                flex-direction: column;
+                align-items: center;
+            }
 
-      nav ul.active {
-        display: flex;
-      }
+            .personagem-card {
+                width: 90%;
+                max-width: 400px;
+            }
 
-      .nav-toggler {
-        display: block;
-      }
-    }
-  </style>
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                background: var(--primary);
+                padding: 15px;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .nav-toggler {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="scrolled">
-    <div class="container header-container">
-      <div class="logo">
-        <div class="logo-text">Revolta das <span>Chibatas</span></div>
-      </div>
-      <button class="nav-toggler" onclick="toggleMenu()">☰</button>
-      <nav>
-        <ul id="nav-menu">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="historia.html">História</a></li>
-          <li><a href="personagens.html">Personagens</a></li>
-          <li><a href="galeria.html">Galeria</a></li>
-          <li><a href="linha-do-tempo.html">Linha do Tempo</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <section class="page-header">
-    <div class="container">
-      <h1>Figuras do Governo e da Marinha</h1>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <div class="container">
-      <div class="gov-section">
-        <!-- Bloco de texto -->
-        <div class="content-block">
-          <p>Alguns dos nomes envolvidos nas decisões e repressões da revolta foram:</p>
-          <ul>
-            <li><strong>Hermes da Fonseca</strong> – Presidente do Brasil na época, autorizou a anistia temporária e depois perseguiu os líderes.</li>
-            <li><strong>Joaquim Marques Batista de Leão</strong> – Ministro da Marinha, envolvido nas negociações.</li>
-          </ul>
-          <p>Essas figuras tiveram papel ambíguo: inicialmente negociando com os revoltosos, mas logo apoiando repressão severa após o fim do motim.</p>
-          <p>A postura do governo refletia não apenas o desejo de controlar as Forças Armadas, mas também o medo de que o movimento se espalhasse por outros setores. A repressão foi intensa, com diversos marinheiros sendo expulsos, presos e até executados em condições duvidosas.</p>
-          <p>Hermes da Fonseca, militar de carreira, via a disciplina como um pilar da ordem e, embora tenha inicialmente cedido às exigências dos revoltosos, logo recorreu à força para restaurar o controle. Essa contradição marcou sua presidência e influenciou a percepção pública sobre sua liderança.</p>
+    <header class="scrolled">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-text">Revolta das <span>Chibatas</span></div>
+            </div>
+            <button class="nav-toggler" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="historia.html">História</a></li>
+                    <li><a href="personagens.html" class="active">Personagens</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="linha-do-tempo.html">Linha do Tempo</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <!-- Imagem -->
-        <div class="leader-photo">
-          <img src="img/Hermes_da_Fonseca_(1910).jpg" alt="Hermes da Fonseca">
+    <section class="page-header">
+        <div class="container">
+            <h1>Personagens da Revolta das Chibatas</h1>
         </div>
-      </div>
+    </section>
 
-      <div class="leader-caption">Hermes da Fonseca – Presidente do Brasil em 1910</div>
+    <section class="content-section">
+        <div class="container">
+            <p>Conheça algumas das figuras chave envolvidas na Revolta das Chibatas, desde líderes e marinheiros até figuras do governo e da Marinha que tiveram um papel no desenrolar deste importante evento histórico.</p>
+
+            <div class="personagens-section">
+                <div class="personagem-card">
+                    <div class="personagem-image">
+                        <img src="img/Joao_Candido.jpg" alt="João Cândido Felisberto">
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">João Cândido Felisberto</h3>
+                        <p class="personagem-papel">Líder da Revolta, o "Almirante Negro".</p>
+                        <p class="personagem-detalhes">Nascido em Encruzilhada do Sul, Rio Grande do Sul, João Cândido liderou os marinheiros na histórica revolta contra os castigos corporais na Marinha Brasileira. Sua liderança e coragem o tornaram um símbolo de resistência e luta por dignidade.</p>
+                    </div>
+                </div>
+
+                <div class="personagem-card">
+                    <div class="personagem-image">
+                        <img src="img/Marcelino Rodrigues Menezes.JPG" alt="Marcelino Rodrigues Menezes">
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Marcelino Rodrigues Menezes</h3>
+                        <p class="personagem-papel">Marinheiro cujo castigo severo foi o estopim da revolta.</p>
+                        <p class="personagem-detalhes">O sofrimento de Marcelino Rodrigues Menezes, punido com chibatadas por insubordinação, indignou seus companheiros e desencadeou a série de eventos que culminaram na Revolta das Chibatas.</p>
+                    </div>
+                </div>
+
+                <div class="personagem-card">
+                    <div class="personagem-image">
+                        <img src="img/Anselmo-Samuel.jpg" alt="Anselmo Samuel">
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Anselmo Samuel</h3>
+                        <p class="personagem-papel">Um dos líderes ao lado de João Cândido.</p>
+                        <p class="personagem-detalhes">Anselmo Samuel foi uma figura importante na organização e execução da revolta, atuando como um dos principais líderes ao lado de João Cândido durante os dias cruciais do movimento.</p>
+                    </div>
+                </div>
+
+                <div class="personagem-card">
+                    <div class="personagem-image">
+                        <img src="img/Hermes_da_Fonseca_(1910).jpg" alt="Hermes da Fonseca">
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Hermes da Fonseca</h3>
+                        <p class="personagem-papel">Presidente do Brasil durante a revolta.</p>
+                        <p class="personagem-detalhes">Como Presidente, Hermes da Fonseca teve um papel central nas negociações com os revoltosos e nas decisões que se seguiram ao fim da revolta, incluindo a controversa revogação da anistia.</p>
+                    </div>
+                </div>
+
+                <div class="personagem-card">
+                    <div class="personagem-image">
+                        <img src="img/images (2).jpeg" alt="Joaquim Marques Batista de Leão">
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Joaquim Marques Batista de Leão</h3>
+                        <p class="personagem-papel">Ministro da Marinha na época da revolta.</p>
+                        <p class="personagem-detalhes">Enquanto Ministro da Marinha, Joaquim Marques Batista de Leão esteve diretamente envolvido nas tratativas com os marinheiros revoltosos e nas ordens dadas à Marinha durante o levante.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>Esta página destaca alguns dos indivíduos mais notáveis envolvidos na Revolta das Chibatas. Cada um, a seu modo, contribuiu para este marcante episódio da história brasileira.</p>
+            <p><a href="outros-lideres.html" class="btn btn-outline">Conheça outros líderes e participantes</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col footer-about">
+                <h3>Sobre a Revolta</h3>
+                <p>A Revolta das Chibatas marcou a história do Brasil como um grito por justiça e dignidade humana.</p>
+            </div>
+
+            <div class="footer-col footer-links">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="historia.html"><i class="fas fa-history"></i> História</a></li>
+                    <li><a href="personagens.html"><i class="fas fa-user-friends"></i> Personagens</a></li>
+                    <li><a href="galeria.html"><i class="fas fa-images"></i> Galeria</a></li>
+                    <li><a href="linha-do-tempo.html"><i class="fas fa-timeline"></i> Linha do Tempo</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-top">
+        <i class="fas fa-chevron-up"></i>
     </div>
-  </section>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("nav-menu").classList.toggle("active");
-    }
-  </script>
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav-menu").classList.toggle("active");
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile Navigation (fallback if no Font Awesome)
+        const navToggler = document.querySelector('.nav-toggler');
+        const nav = document.querySelector('nav');
+
+        navToggler.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        // Back to Top button
+        const backTop = document.querySelector('.back-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backTop.classList.add('active');
+            } else {
+                backTop.classList.remove('active');
+            }
+        });
+
+        backTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
+```

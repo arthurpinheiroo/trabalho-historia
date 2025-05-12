@@ -1,170 +1,199 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+<head> <link rel="shortcut icon" href="img/Leonardo_Phoenix_10_A_stylized_favicon_image_depicting_the_Chi_3.jpg" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>História da Revolta das Chibatas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Estilo para as caixas arredondadas */
-        /* Estilo para as caixas arredondadas - MODIFICADO */
+ /* Estilo para as caixas arredondadas */
+/* Estilo para as caixas arredondadas - MODIFICADO */
 .content-block {
     background-color: #f9f9f9; /* Cor de fundo mais clara */
-    padding: 25px; /* Aumentando o padding interno */
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
-    margin-bottom: 25px; /* Espaçamento inferior ligeiramente menor */
+    padding: 30px; /* Aumentando o padding interno */
+    border-radius: 12px; /* Bordas um pouco mais arredondadas */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Sombra mais suave e um pouco maior */
+    margin-bottom: 30px; /* Espaçamento inferior um pouco maior */
     position: relative;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transição mais suave */
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out; /* Transição mais suave */
     overflow: hidden;
-    border-left: 8px solid #f39c12; /* Barra lateral como destaque */
+    border-left: 10px solid var(--secondary); /* Barra lateral mais destacada */
 }
 
 .content-block h2 {
-    font-size: 1.6rem; /* Ligeiramente maior */
-    color: #2c3e50; /* Cor de título mais escura */
-    margin-bottom: 12px;
-    padding-left: 10px; /* Espaçamento para o ícone */
+    font-size: 1.7rem; /* Ligeiramente maior */
+    color: var(--primary); /* Cor de título primária */
+    margin-bottom: 15px;
+    padding-left: 15px; /* Espaçamento para o ícone */
+    display: flex; /* Alinha ícone e texto */
+    align-items: center; /* Centraliza verticalmente */
 }
 
 .content-block h2 i {
-    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
-    color: #f39c12; /* Cor do ícone consistente com a barra lateral */
+    margin-right: 12px; /* Espaçamento entre o ícone e o texto */
+    font-size: 1.3rem; /* Tamanho do ícone ligeiramente maior */
+    color: var(--secondary); /* Cor do ícone consistente com a barra lateral */
 }
 
 .content-block p {
-    font-size: 1.05rem; /* Ligeiramente maior */
-    line-height: 1.7; /* Melhor espaçamento entre linhas */
-    color: #555; /* Cor de texto um pouco mais clara */
-    padding-left: 10px; /* Alinhamento com o título */
+    font-size: 1.1rem; /* Ligeiramente maior */
+    line-height: 1.8; /* Melhor espaçamento entre linhas */
+    color: #4a4a4a; /* Cor de texto um pouco mais escura e suave */
+    padding-left: 15px; /* Alinhamento com o título */
 }
 
 .content-block:hover {
-    transform: translateY(-3px); /* Efeito de levantar mais sutil */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra no hover mais pronunciada */
+    transform: translateY(-5px); /* Efeito de levantar mais suave e um pouco maior */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Sombra no hover mais pronunciada */
+}
+
+/* Estilos para navegação mobile (sem alterações nessa parte) */
+nav.mobile-open ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: var(--primary);
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .nav-toggler {
+        display: block;
+    }
 }
     </style>
 </head>
 <body>
-    <header class="scrolled"><div class="container header-container">
-        <div class="logo">
-            <div class="logo-text">Revolta das <span>Chibatas</span></div>
+    <header class="scrolled">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-text">Revolta das <span>Chibatas</span></div>
+            </div>
+
+            <button class="nav-toggler" aria-label="Abrir/Fechar Menu" aria-expanded="false" data-target="#nav-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="historia.html" class="active" aria-current="page">História</a></li>
+                    <li><a href="personagens.html">Personagens</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="linha-do-tempo.html">Linha do Tempo</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <button class="nav-toggler">
-            <i class="fas fa-bars"></i>
-        </button>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>A História da Revolta das Chibatas</h1>
+            </div>
+        </section>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="historia.html" class="active">História</a></li>
-                <li><a href="personagens.html">Personagens</a></li>
-                <li><a href="galeria.html">Galeria</a></li>
-                <li><a href="linha-do-tempo.html">Linha do Tempo</a></li>
-            </ul>
-        </nav>
+        <section class="content-section">
+          <div class="container">
+            <div class="content-row">
+              <div class="main-content">
+                <div class="content-block">
+                  <h2><i class="fas fa-flag"></i> Antecedentes e Causas</h2>
+                  <p>No início do século XX, a Marinha do Brasil ainda mantinha castigos corporais como a chibata. A maioria dos marinheiros era negra ou mulata e vivia em condições degradantes e violentas.</p>
+                  <p>A chegada de navios modernos como o Minas Gerais expôs o contraste entre a modernização tecnológica e os métodos disciplinares arcaicos.</p>
+                </div>
+
+                <div class="content-block">
+                  <h2><i class="fas fa-bolt"></i> O Levante de 1910</h2>
+                  <p>João Cândido liderou a revolta após o castigo severo de um marinheiro. Os revoltosos tomaram navios e ameaçaram bombardear o Rio de Janeiro caso suas exigências não fossem atendidas.</p>
+                  <p>As demandas incluíam o fim dos castigos corporais, melhores condições de vida e anistia para os envolvidos.</p>
+                </div>
+
+                <div class="content-block">
+                  <h2><i class="fas fa-scale-balanced"></i> Negociações e Consequências</h2>
+                  <p>O governo cedeu às exigências e aboliu os castigos corporais. Contudo, a anistia prometida foi quebrada, e muitos marinheiros foram perseguidos, presos ou mortos.</p>
+                </div>
+
+                <div class="content-block">
+                  <h2><i class="fas fa-star"></i> Legado e Importância Histórica</h2>
+                  <p>A revolta expôs o racismo estrutural nas Forças Armadas e transformou João Cândido em símbolo da luta por justiça, dignidade e igualdade social no Brasil.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col footer-about">
+                <h3>Sobre a Revolta</h3>
+                <p>A Revolta das Chibatas marcou a história do Brasil como um grito por justiça e dignidade humana.</p>
+            </div>
+
+            <div class="footer-col footer-links">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="historia.html"><i class="fas fa-history"></i> História</a></li>
+                    <li><a href="personagens.html"><i class="fas fa-user-friends"></i> Personagens</a></li>
+                    <li><a href="galeria.html"><i class="fas fa-images"></i> Galeria</a></li>
+                    <li><a href="linha-do-tempo.html"><i class="fas fa-timeline"></i> Linha do Tempo</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-top">
+        <i class="fas fa-chevron-up"></i>
     </div>
-</header>
 
-<section class="page-header">
-    <div class="container">
-        <h1>A História da Revolta das Chibatas</h1>
-    </div>
-</section>
-
-<section class="content-section">
-  <div class="container">
-    <div class="content-row">
-      <div class="main-content">
-        <div class="content-block">
-          <h2><i class="fas fa-flag"></i> Antecedentes e Causas</h2>
-          <p>No início do século XX, a Marinha do Brasil ainda mantinha castigos corporais como a chibata. A maioria dos marinheiros era negra ou mulata e vivia em condições degradantes e violentas.</p>
-          <p>A chegada de navios modernos como o Minas Gerais expôs o contraste entre a modernização tecnológica e os métodos disciplinares arcaicos.</p>
-        </div>
-
-        <div class="content-block">
-          <h2><i class="fas fa-bolt"></i> O Levante de 1910</h2>
-          <p>João Cândido liderou a revolta após o castigo severo de um marinheiro. Os revoltosos tomaram navios e ameaçaram bombardear o Rio de Janeiro caso suas exigências não fossem atendidas.</p>
-          <p>As demandas incluíam o fim dos castigos corporais, melhores condições de vida e anistia para os envolvidos.</p>
-        </div>
-
-        <div class="content-block">
-          <h2><i class="fas fa-scale-balanced"></i> Negociações e Consequências</h2>
-          <p>O governo cedeu às exigências e aboliu os castigos corporais. Contudo, a anistia prometida foi quebrada, e muitos marinheiros foram perseguidos, presos ou mortos.</p>
-        </div>
-
-        <div class="content-block">
-          <h2><i class="fas fa-star"></i> Legado e Importância Histórica</h2>
-          <p>A revolta expôs o racismo estrutural nas Forças Armadas e transformou João Cândido em símbolo da luta por justiça, dignidade e igualdade social no Brasil.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-    <div class="container footer-container">
-        <div class="footer-col footer-about">
-            <h3>Sobre a Revolta</h3>
-            <p>A Revolta das Chibatas marcou a história do Brasil como um grito por justiça e dignidade humana.</p>
-        </div>
-
-        <div class="footer-col footer-links">
-            <h3>Links Úteis</h3>
-            <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
-                <li><a href="historia.html"><i class="fas fa-history"></i> História</a></li>
-                <li><a href="personagens.html"><i class="fas fa-user-friends"></i> Personagens</a></li>
-                <li><a href="galeria.html"><i class="fas fa-images"></i> Galeria</a></li>
-                <li><a href="linha-do-tempo.html"><i class="fas fa-timeline"></i> Linha do Tempo</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-<div class="back-top">
-    <i class="fas fa-chevron-up"></i>
-</div>
-
-<script>
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        header.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // Mobile Navigation
-    const navToggler = document.querySelector('.nav-toggler');
-    const nav = document.querySelector('nav');
-
-    navToggler.addEventListener('click', () => {
-        nav.classList.toggle('active');
-    });
-
-    nav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('active');
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
         });
-    });
 
-    // Back to Top button
-    const backTop = document.querySelector('.back-top');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backTop.classList.add('active');
-        } else {
-            backTop.classList.remove('active');
-        }
-    });
+        // Mobile Navigation
+        const navToggler = document.querySelector('.nav-toggler');
+        const nav = document.querySelector('nav');
+        const navMenu = document.querySelector('#nav-menu');
 
-    backTop.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        navToggler.addEventListener('click', () => {
+            const expanded = navToggler.getAttribute('aria-expanded') === 'true' || false;
+            navToggler.setAttribute('aria-expanded', !expanded);
+            nav.classList.toggle('mobile-open'); // Adiciona/remove a classe 'mobile-open'
         });
-    });
-</script>
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('mobile-open'); // Remove a classe ao clicar em um link
+                navToggler.setAttribute('aria-expanded', false);
+            });
+        });
+
+        // Back to Top button
+        const backTop = document.querySelector('.back-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backTop.classList.add('active');
+            } else {
+                backTop.classList.remove('active');
+            }
+        });
+
+        backTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>

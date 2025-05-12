@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="shortcut icon" href="img/Leonardo_Phoenix_10_A_stylized_favicon_image_depicting_the_Chi_3.jpg" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria da Revolta das Chibatas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-       /* Layout para a galeria */
+    
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Flexibilidade */
-    gap: 20px;
-    margin-top: 30px;
+    gap: 25px; /* Aumentando um pouco o espaçamento */
+    margin-top: 40px; /* Aumentando um pouco a margem superior */
+    padding: 20px; /* Adicionando um pouco de padding ao redor do grid */
 }
 
-/* Card da imagem */
+/* Card da imagem - MODIFICADO */
 .gallery-item {
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra mais suave e um pouco maior */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição mais suave e para a sombra */
     position: relative;
 }
 
-/* Efeito de zoom ao passar o mouse */
+/* Efeito de zoom ao passar o mouse - MODIFICADO */
 .gallery-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.08); /* Zoom um pouco maior */
+    opacity: 0.95; /* Levemente mais visível ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada no hover */
 }
 
-/* As imagens */
+/* As imagens - SEM ALTERAÇÕES */
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Para que a imagem cubra todo o container, sem distorção */
-    object-position: center; /* Garante que a imagem sempre esteja centralizada */
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
-/* Ajuste para imagens com diferentes proporções */
+/* Ajuste para imagens com diferentes proporções - SEM ALTERAÇÕES */
 .gallery-item:nth-child(2),
 .gallery-item:nth-child(4) {
-    grid-column: span 2; /* Para aumentar o tamanho dessas imagens */
+    grid-column: span 2;
 }
 
 .gallery-item:nth-child(3),
 .gallery-item:nth-child(5) {
-    grid-column: span 1; /* Imagens de tamanho normal */
+    grid-column: span 1;
 }
 
-
+/* Estilo para o título da seção - OPCIONAL */
+.content-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary); /* Usando a cor primária do seu tema */
+    margin-bottom: 20px;
+    text-align: center; /* Centralizando o título */
+}
     </style>
 </head>
 <body>
@@ -58,7 +69,8 @@
                 <div class="logo-text">Revolta das <span>Chibatas</span></div>
             </div>
 
-            <button class="nav-toggler"><i class="fas fa-bars"></i>
+            <button class="nav-toggler" aria-label="Abrir/Fechar Menu">
+                <i class="fas fa-bars"></i>
             </button>
 
             <nav>
@@ -66,44 +78,46 @@
                     <li><a href="index.html">Início</a></li>
                     <li><a href="historia.html">História</a></li>
                     <li><a href="personagens.html">Personagens</a></li>
-                    <li><a href="galeria.html" class="active">Galeria</a></li>
+                    <li><a href="galeria.html" class="active" aria-current="page">Galeria</a></li>
                     <li><a href="linha-do-tempo.html">Linha do Tempo</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Galeria de Imagens</h1>
-        </div>
-    </section>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Galeria de Imagens</h1>
+            </div>
+        </section>
 
-    <section class="content-section">
-        <div class="container">
-            <h2>Imagens Históricas da Revolta</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="img/E_Minas_Geraes_1910_altered.jpg" alt="Navio Minas Gerais">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/images.jpeg" alt="Marinheiros a Bordo">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/images (1).jpeg" alt="Rio de Janeiro 1910">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/imagem.jpeg" alt="Ilustração da época">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/foto-0.jpg" alt="Canhões Apontados">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/Joao_Candido.jpg" alt="Líderes da Revolta">
+        <section class="content-section">
+            <div class="container">
+                <h2>Imagens Históricas da Revolta</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="img/E_Minas_Geraes_1910_altered.jpg" alt="Encouraçado Minas Gerais em 1910">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/images.jpeg" alt="Marinheiros a bordo de um navio durante a Revolta das Chibatas">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/images (1).jpeg" alt="Vista do Rio de Janeiro por volta de 1910">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/imagem.jpeg" alt="Ilustração da prática da chibata na Marinha Brasileira">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/foto-0.jpg" alt="Canhões de um navio apontados para a cidade do Rio de Janeiro">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/Joao_Candido.jpg" alt="Retrato de João Cândido, líder da Revolta das Chibatas">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="container footer-container">
@@ -122,8 +136,7 @@
                     <li><a href="linha-do-tempo.html"><i class="fas fa-timeline"></i> Linha do Tempo</a></li>
                 </ul>
             </div>
-
-           
+        </div>
     </footer>
 
     <div class="back-top">

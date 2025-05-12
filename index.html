@@ -1,20 +1,394 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="shortcut icon" href="img/Leonardo_Phoenix_10_A_stylized_favicon_image_depicting_the_Chi_3.jpg" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revolta das Chibatas | Uma História de Resistência</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ... outras regras CSS ... */
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.intro-text p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.intro-image-container { /* Novo container para a imagem e o efeito amarelo */
+    position: relative;
+    width: 100%;
+    display: flex; /* Ativa o Flexbox */
+    justify-content: flex-end; /* Alinha o conteúdo à direita */
+    align-items: center; /* Centraliza verticalmente, se necessário */
+    padding-left: 50px; /* Adiciona um espaço à esquerda para não grudar no texto */
+}
+
+.intro-img {
+    width: 71%;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transition: all 0.5s ease;
+}
+
+
+
+.intro-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* ... seus estilos CSS existentes ... */
+
+
+/* Responsividade para Laptops Maiores e Telas de Alta Resolução (max-width: 2560px) */
+@media (min-width: 1201px) and (max-width: 1060px) {
+    .container {
+        width: 85%; /* Para telas maiores, podemos usar uma largura um pouco menor para o conteúdo principal */
+        max-width: 1600px; /* Aumentando o max-width para telas muito grandes */
+    }
+
+    .hero h1 {
+        font-size: 60px; /* Título um pouco maior em telas grandes */
+    }
+
+    .hero p {
+        font-size: 19px; /* Texto um pouco maior */
+        max-width: 70%; /* Limitando a largura do parágrafo para melhor leitura */
+        margin: 0 auto 50px;
+    }
+
+    .hero-buttons {
+        gap: 25px; /* Mais espaço entre os botões */
+    }
+
+    .btn {
+        padding: 14px 32px; /* Botões ligeiramente maiores */
+        font-size: 16px;
+    }
+
+    .section-title h2 {
+        font-size: 40px; /* Títulos de seção maiores */
+    }
+
+    .intro-content {
+        gap: 60px; /* Mais espaço entre texto e imagem */
+    }
+
+    .intro-text p {
+        font-size: 17px;
+        line-height: 1.9;
+    }
+
+    .intro-img {
+        width: 60%; /* Ajustando a largura da imagem */
+    }
+
+    .intro-image-container::before {
+        width: 50%; /* Ajustando o fundo amarelo */
+        top: 5px; /* Pequeno ajuste vertical */
+        left: 50%; /* Ajustando a posição horizontal */
+    }
+
+    .intro-stats {
+        gap: 40px; /* Mais espaço entre as estatísticas */
+    }
+
+    .stat-item {
+        padding: 30px;
+    }
+
+    .stat-icon {
+        font-size: 40px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .stat-text {
+        font-size: 18px;
+    }
+
+    .historias-container {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Cards de história um pouco maiores */
+        gap: 30px;
+    }
+
+    .historia-title {
+        font-size: 22px;
+    }
+
+    .historia-text {
+        font-size: 16px;
+    }
+
+    .cta h2 {
+        font-size: 36px;
+    }
+
+    .cta p {
+        font-size: 18px;
+    }
+
+    .footer-container {
+        padding: 50px;
+        flex-direction: row; /* Mantém os itens do footer em linha para telas maiores */
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .footer-col {
+        margin-bottom: 0;
+        flex: 1;
+    }
+}
+
+/* Responsividade para Laptops Menores e Tablets Maiores (max-width: 1200px) */
+@media (max-width: 1200px) {
+    .container {
+        width: 90%; /* Ligeiramente menor que o padrão para dar mais espaço */
+    }
+
+    .hero h1 {
+        font-size: 52px; /* Um pouco menor que o original */
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .intro-content {
+        gap: 40px; /* Reduzindo um pouco o espaço entre as colunas */
+    }
+
+    .intro-img {
+        width: 75%; /* Aumentando um pouco a largura da imagem */
+    }
+
+    .intro-image-container::before {
+        width: 65%; /* Ajustando a largura do fundo amarelo */
+    }
+
+    .intro-stats {
+        gap: 20px; /* Reduzindo o espaço entre as estatísticas */
+    }
+
+    .stat-item {
+        padding: 22px;
+    }
+
+    .stat-icon {
+        font-size: 34px;
+    }
+
+    .stat-number {
+        font-size: 30px;
+    }
+
+    .historias-container {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Ligeiro ajuste na largura mínima dos cards */
+        gap: 25px;
+    }
+}
+
+/* Responsividade para Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+    }
+
+    .hero {
+        height: auto;
+        padding: 100px 0;
+    }
+
+    .hero-content {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        max-width: 80%;
+        margin: 0 auto 30px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .intro-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px; /* Adicionando um pouco de espaço quando em coluna única */
+    }
+
+    .intro-image-container {
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .intro-img {
+        width: 70%;
+    }
+
+    .intro-image-container::before {
+        width: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10px;
+    }
+
+    .intro-stats {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        text-align: center;
+        gap: 20px; /* Mantendo o espaçamento */
+    }
+
+    .stat-item {
+        padding: 20px;
+    }
+
+    .stat-icon {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .stat-number {
+        font-size: 28px;
+    }
+
+    .historias-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+}
+
+/* Responsividade para Smartphones (max-width: 768px) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    nav#main-navigation ul {
+        display: none; /* Esconde o menu principal */
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        margin-top: 15px;
+        background-color: var(--primary);
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    nav#main-navigation.active ul {
+        display: flex; /* Mostra o menu quando a classe 'active' está presente */
+    }
+
+    nav#main-navigation ul li a {
+        font-size: 18px;
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-toggler {
+        display: block;
+        color: var(--white);
+        font-size: 28px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .intro-image-container::before {
+        left: 50%;
+        width: 90%;
+    }
+
+    .intro-img {
+        width: 90%;
+    }
+
+    .historias-container {
+        grid-template-columns: 1fr;
+    }
+
+    .historia-card {
+        text-align: center;
+    }
+
+    .historia-link {
+        justify-content: center;
+    }
+
+    .cta h2 {
+        font-size: 28px;
+    }
+
+    .cta p {
+        font-size: 16px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .footer-col {
+        margin-bottom: 20px;
+    }
+
+    .footer-col:last-child {
+        margin-bottom: 0;
+    }
+}
+    </style>
 </head>
 <body>
     <div class="preloader">
         <div class="loader"></div>
     </div>
 
-    <div class="custom-cursor"></div>
-    <div class="custom-cursor cursor-outer"></div>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
     <header>
         <div class="container header-container">
@@ -22,13 +396,14 @@
                 <div class="logo-text">Revolta das <span>Chibatas</span></div>
             </div>
 
-            <button class="nav-toggler">
+            <button class="nav-toggler" aria-expanded="false" aria-controls="main-navigation" aria-label="Abrir/Fechar Menu">
                 <i class="fas fa-bars"></i>
+                <span class="sr-only">Menu</span>
             </button>
 
-            <nav>
+            <nav id="main-navigation">
                 <ul>
-                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="index.html" class="active" aria-current="page">Início</a></li>
                     <li><a href="historia.html">História</a></li>
                     <li><a href="personagens.html">Personagens</a></li>
                     <li><a href="galeria.html">Galeria</a></li>
@@ -38,132 +413,134 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container hero-content animate__animated animate__fadeIn">
-            <h1 class="animate__animated animate__fadeInUp">Revolta das <span>Chibatas</span></h1>
-            <p class="animate__animated animate__fadeInUp animate__delay-1s">Um movimento histórico de luta contra castigos corporais e por dignidade na Marinha Brasileira, liderado por João Cândido, o "Almirante Negro", em novembro de 1910.</p>
-            <div class="hero-buttons">
-                <a href="historia.html" class="btn animate__animated animate__fadeInUp animate__delay-1s">Conheça a História</a>
-                <a href="galeria.html" class="btn btn-outline animate__animated animate__fadeInUp animate__delay-1s">Ver Galeria</a>
-            </div>
-        </div>
-
-       
-        <a href="#intro" class="hero-scroll">
-            <i class="fas fa-chevron-down" style="color: white; font-size: 24px;"></i>
-        </a>
-
-        <div class="wave-container">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
-    </section>
-
-    <section id="intro" class="intro">
-        <div class="container">
-            <div class="section-title">
-                <h2>A Revolta das Chibatas</h2>
-                <p>Um marco na luta por justiça e direitos humanos na história do Brasil</p>
-            </div>
-
-            <div class="intro-content">
-                <div class="intro-text">
-                    <p>A Revolta das Chibatas foi um movimento liderado por marinheiros brasileiros, principalmente negros e mulatos, contra os castigos corporais que ainda eram aplicados na Marinha do Brasil no início do século XX, mais de duas décadas após a abolição da escravatura.</p>
-
-                    <p>Entre 22 e 27 de novembro de 1910, sob a liderança de João Cândido Felisberto, conhecido como o "Almirante Negro", os marinheiros tomaram o controle dos principais navios da frota brasileira, incluindo os modernos encouraçados Minas Gerais e São Paulo, e apontaram seus canhões para a cidade do Rio de Janeiro, então capital federal.</p>
-
-                    <p>Os revoltosos exigiam o fim dos castigos físicos, melhores condições de trabalho e anistia para todos os envolvidos. O episódio expôs as contradições da jovem República brasileira e as persistentes desigualdades raciais, representando um importante capítulo na luta por dignidade e direitos humanos no Brasil.</p>
-
-                    <a href="historia.html" class="btn">Saiba mais</a>
-                </div>
-
-                <div class="intro-image">
-                    <img src="img/Joao_Candido.jpg" alt="João Cândido, líder da Revolta" class="intro-img">
+    <main id="main-content">
+        <section class="hero">
+            <div class="container hero-content animate__animated animate__fadeIn">
+                <h1 class="animate__animated animate__fadeInUp">Revolta das <span>Chibatas</span></h1>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">Um movimento histórico de luta contra castigos corporais e por dignidade na Marinha Brasileira, liderado por João Cândido, o "Almirante Negro", em novembro de 1910.</p>
+                <div class="hero-buttons">
+                    <a href="historia.html" class="btn animate__animated animate__fadeInUp animate__delay-1s">Conheça a História</a>
+                    <a href="galeria.html" class="btn btn-outline animate__animated animate__fadeInUp animate__delay-1s">Ver Galeria</a>
                 </div>
             </div>
-        </div>
 
-        <div class="container">
-            <div class="intro-stats">
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-anchor"></i>
-                    </div>
-                    <div class="stat-number" data-count="4">0</div>
-                    <div class="stat-text">Navios tomados pelos marinheiros</div>
-                </div>
 
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="stat-number" data-count="2500">0</div>
-                    <div class="stat-text">Marinheiros envolvidos na revolta</div>
-                </div>
+            <a href="#intro" class="hero-scroll">
+                <i class="fas fa-chevron-down" style="color: white; font-size: 24px;"></i>
+            </a>
 
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-calendar-day"></i>
-                    </div>
-                    <div class="stat-number" data-count="6">0</div>
-                    <div class="stat-text">Dias de duração do movimento</div>
-                </div>
+            <div class="wave-container">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="historias">
-        <div class="container">
-            <div class="section-title">
-                <h2>Conheça mais</h2>
-                <p>Explore os diversos aspectos desta importante revolta na história brasileira</p>
-            </div>
-
-            <div class="historias-container">
-                <div class="historia-card" data-aos="fade-up">
-                    <div class="historia-img">
-                        <img src="img/revolta_da_chibata_joa_o_ca_ndido_e_o_repa_rter_julio_de_medeiros_bb.webp" alt="Contexto Histórico">
-                    </div>
-                    <div class="historia-content">
-                        <h3 class="historia-title">Contexto Histórico</h3>
-                        <p class="historia-text">Entenda o Brasil da época e as condições que levaram à revolta.</p>
-                        <a href="#" class="historia-link">Ler mais <i class="fas fa-arrow-right"></i></a>
-                    </div>
+        <aside id="intro" class="intro">
+            <div class="container">
+                <div class="section-title">
+                    <h2>A Revolta das Chibatas</h2>
+                    <p>Um marco na luta por justiça e direitos humanos na história do Brasil</p>
                 </div>
 
-                <div class="historia-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="historia-img">
-                        <img src="img/chibatacapa29384ytgv.jpg" alt="As Causas">
-                    </div>
-                    <div class="historia-content">
-                        <h3 class="historia-title">As Causas da Revolta</h3>
-                        <p class="historia-text">Descubra os motivos que impulsionaram os marinheiros a se rebelarem.</p>
-                        <a href="#" class="historia-link">Ler mais <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <p>A Revolta das Chibatas foi um movimento liderado por marinheiros brasileiros, principalmente negros e mulatos, contra os castigos corporais que ainda eram aplicados na Marinha do Brasil no início do século XX, mais de duas décadas após a abolição da escravatura.</p>
 
-                <div class="historia-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="historia-img">
-                        <img src="img/Joao-Candido-na-sua-casa-em-Sao-Joao-do-Meriti-em-1958-aos-78-anos-—-Foto-ArquivoAgencia-O-GLOBO.jpg" alt="O Líder: João Cândido">
+                        <p>Entre 22 e 27 de novembro de 1910, sob a liderança de João Cândido Felisberto, conhecido como o "Almirante Negro", os marinheiros tomaram o controle dos principais navios da frota brasileira, incluindo os modernos encouraçados Minas Gerais e São Paulo, e apontaram seus canhões para a cidade do Rio de Janeiro, então capital federal.</p>
+
+                        <p>Os revoltosos exigiam o fim dos castigos físicos, melhores condições de trabalho e anistia para todos os envolvidos. O episódio expôs as contradições da jovem República brasileira e as persistentes desigualdades raciais, representando um importante capítulo na luta por dignidade e direitos humanos no Brasil.</p>
+
+                        <a href="historia.html" class="btn">Saiba mais</a>
                     </div>
-                    <div class="historia-content">
-                        <h3 class="historia-title">O Líder: João Cândido</h3>
-                        <p class="historia-text">A trajetória e a importância do "Almirante Negro" na revolta.</p>
-                        <a href="personagens.html" class="historia-link">Ler mais <i class="fas fa-arrow-right"></i></a>
+
+                    <div class="intro-image-container">
+                        <img src="img/Joao_Candido.jpg" alt="Retrato de João Cândido, líder da Revolta das Chibatas" class="intro-img">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="cta">
-        <div class="container cta-content">
-            <h2 class="animate__animated animate__fadeInUp">Explore a Linha do Tempo da Revolta</h2>
-            <p class="animate__animated animate__fadeInUp animate__delay-1s">Acompanhe os principais eventos e momentos cruciais deste levante histórico.</p>
-            <a href="linha-do-tempo.html" class="btn btn-outline animate__animated animate__fadeInUp animate__delay-2s">Ver Linha do Tempo</a>
-        </div>
-    </section>
+            <div class="container">
+                <div class="intro-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-anchor"></i>
+                        </div>
+                        <div class="stat-number" data-count="4">0</div>
+                        <div class="stat-text">Navios tomados pelos marinheiros</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-number" data-count="2500">0</div>
+                        <div class="stat-text">Marinheiros envolvidos na revolta</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div class="stat-number" data-count="6">0</div>
+                        <div class="stat-text">Dias de duração do movimento</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="historias">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Conheça mais</h2>
+                    <p>Explore os diversos aspectos desta importante revolta na história brasileira</p>
+                </div>
+
+                <div class="historias-container">
+                    <div class="historia-card" data-aos="fade-up">
+                        <div class="historia-img">
+                            <img src="img/revolta_da_chibata_joa_o_ca_ndido_e_o_repa_rter_julio_de_medeiros_bb.webp" alt="Fotografia histórica mostrando João Cândido e um repórter">
+                        </div>
+                        <div class="historia-content">
+                            <h3 class="historia-title">Contexto Histórico</h3>
+                            <p class="historia-text">Entenda o Brasil da época e as condições que levaram à revolta.</p>
+                            <a href="#" class="historia-link">Ler mais sobre o Contexto Histórico <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="historia-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="historia-img">
+                            <img src="img/chibatacapa29384ytgv.jpg" alt="Ilustração representando a prática da chibata na Marinha">
+                        </div>
+                        <div class="historia-content">
+                            <h3 class="historia-title">As Causas da Revolta</h3>
+                            <p class="historia-text">Descubra os motivos que impulsionaram os marinheiros a se rebelarem.</p>
+                            <a href="#" class="historia-link">Ler mais sobre as Causas da Revolta <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="historia-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="historia-img">
+                            <img src="img/Joao-Candido-na-sua-casa-em-Sao-Joao-do-Meriti-em-1958-aos-78-anos-—-Foto-ArquivoAgencia-O-GLOBO.jpg" alt="Fotografia de João Cândido em sua casa em 1958">
+                        </div>
+                        <div class="historia-content">
+                            <h3 class="historia-title">O Líder: João Cândido</h3>
+                            <p class="historia-text">A trajetória e a importância do "Almirante Negro" na revolta.</p>
+                            <a href="personagens.html" class="historia-link">Ler mais sobre João Cândido <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container cta-content">
+                <h2 class="animate__animated animate__fadeInUp">Explore a Linha do Tempo da Revolta</h2>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">Acompanhe os principais eventos e momentos cruciais deste levante histórico.</p>
+                <a href="linha-do-tempo.html" class="btn btn-outline animate__animated animate__fadeInUp animate__delay-2s">Ver Linha do Tempo</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container footer-container">
@@ -181,16 +558,15 @@
                     <li><a href="linha-do-tempo.html"><i class="fas fa-timeline"></i> Linha do Tempo</a></li>
                 </ul>
             </div>
-
-          
+        </div>
     </footer>
 
-    <div class="back-top active">
+    <div class="back-top">
         <i class="fas fa-chevron-up"></i>
     </div>
 
     <script>
-        // Preloader
+
         window.addEventListener('load', () => {
             const preloader = document.querySelector('.preloader');
             preloader.classList.add('fade-out');
@@ -199,29 +575,13 @@
             }, 600);
         });
 
-        // Header scroll effect
+        // Efeito de scroll do cabeçalho
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             header.classList.toggle('scrolled', window.scrollY > 50);
-        });
 
-        // Mobile Navigation
-        const navToggler = document.querySelector('.nav-toggler');
-        const nav = document.querySelector('nav');
-
-        navToggler.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-            });
-        });
-
-        // Back to Top button
-        const backTop = document.querySelector('.back-top');
-        window.addEventListener('scroll', () => {
+            // Visibilidade do botão "Voltar ao Topo"
+            const backTop = document.querySelector('.back-top');
             if (window.scrollY > 300) {
                 backTop.classList.add('active');
             } else {
@@ -229,6 +589,25 @@
             }
         });
 
+        // Navegação Mobile
+        const navToggler = document.querySelector('.nav-toggler');
+        const nav = document.querySelector('nav');
+
+        navToggler.addEventListener('click', () => {
+            const expanded = navToggler.getAttribute('aria-expanded') === 'true' || false;
+            navToggler.setAttribute('aria-expanded', !expanded);
+            nav.classList.toggle('active');
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                navToggler.setAttribute('aria-expanded', false);
+            });
+        });
+
+        // Funcionalidade do botão "Voltar ao Topo"
+        const backTop = document.querySelector('.back-top');
         backTop.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
@@ -236,7 +615,7 @@
             });
         });
 
-        // Stats counter animation
+        // Animação do contador de estatísticas
         const statNumbers = document.querySelectorAll('.stat-number');
 
         const observer = new IntersectionObserver((entries, observer) => {
@@ -245,7 +624,7 @@
                     const statNumber = entry.target;
                     const target = parseInt(statNumber.getAttribute('data-count'));
                     let count = 0;
-                    const speed = 200; // Adjust speed as needed
+                    const speed = 200; // Ajuste a velocidade conforme necessário
 
                     const updateCount = () => {
                         const increment = Math.ceil(target / speed);
@@ -268,8 +647,8 @@
             observer.observe(number);
         });
 
-        // Custom cursor (optional - requires more CSS in style.css)
-        const cursor = document.querySelector('.custom-cursor');
+       // Cursor personalizado (opcional - requer mais CSS em style.css)
+       const cursor = document.querySelector('.custom-cursor');
         const cursorOuter = document.querySelector('.cursor-outer');
 
         document.addEventListener('mousemove', e => {
